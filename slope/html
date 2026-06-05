@@ -1,0 +1,111 @@
+<html lang="en"><head><base target="_blank">
+
+
+<meta charset="UTF-8">
+<title>Game Start UI</title>
+
+<style>
+body {
+  margin: 0;
+  height: 100vh;
+  background: #ffd84d;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-family: Arial, sans-serif;
+}
+
+.container {
+  text-align: center;
+}
+
+/* საერთო ღილაკი */
+.btn {
+  width: 320px;
+  padding: 18px;
+  border-radius: 20px;
+  font-size: 18px;
+  font-weight: bold;
+  border: none;
+  cursor: pointer;
+  margin: 15px 0;
+  transition: 0.2s;
+}
+
+/* PLAY GAME */
+.play-btn {
+  background: linear-gradient(45deg, #5f3bff, #7a5cff);
+  color: white;
+  box-shadow: 0 5px 15px rgba(0,0,0,0.2);
+}
+
+.play-btn:hover {
+  transform: scale(1.03);
+}
+
+/* SECOND BUTTON */
+.secondary-btn {
+  background: #fff3b0;
+  color: #5f3bff;
+  box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+}
+
+.secondary-btn:hover {
+  background: #ffe680;
+}
+
+/* iframe */
+iframe {
+  display: none;
+  width: 100vw;
+  height: 100vh;
+  border: none;
+  position: fixed;
+  top: 0;
+  left: 0;
+}
+</style>
+
+</head>
+<body>
+
+<div class="container" id="menu" style="display: none;">
+
+  <button class="btn play-btn" onclick="startGame()">
+    PLAY GAME
+  </button>
+
+  <br>
+
+  <button class="btn secondary-btn" onclick="goTrending()">
+    PLAY AT CLASSROOM 4X (broken)
+  </button>
+
+</div>
+
+<iframe id="gameFrame" src="https://slopepro.github.io/slope/" style="display: block;"></iframe>
+
+<script>
+function startGame() {
+  const frame = document.getElementById("gameFrame");
+  const menu = document.getElementById("menu");
+
+  frame.src = "https://slopepro.github.io/slope/";
+  frame.style.display = "block";
+
+  // მენიუს დამალვა
+  menu.style.display = "none";
+}
+
+function goTrending() {
+  window.open("https://classroom4x.dev/slope/", "_blank");
+}
+</script>
+
+
+
+
+
+
+
+</body></html>
